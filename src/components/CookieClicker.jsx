@@ -19,7 +19,7 @@ export default function CookieClicker() {
     }
 
     return (
-        <div className="shadow-neutral-500 shadow flex text-left p-5 rounded-2xl bg-slate-400 w-[40vw]">
+        <div className="shadow-neutral-500 shadow flex text-left p-5 rounded-2xl bg-slate-400 w-[40vw] mt-8">
             <button className="border rounded-full p-25 bg-orange-300 mr-5" onClick={handleClick}></button>
             <div>
                 <p>Cookies: {count}</p>
