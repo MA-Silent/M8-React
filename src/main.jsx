@@ -1,5 +1,5 @@
 import { StrictMode, lazy, Suspense } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, HashRouter, Link } from 'react-router-dom'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 
@@ -9,12 +9,12 @@ const Contact = lazy(()=> import("./Contact.jsx"))
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <header>
         <nav className="bg-slate-600 flex justify-center text-center">
-          <a href="/"><button className='h-[5vh] cursor-pointer'>Home</button></a>
-          <a href="/Games" className='border-x border-neutral-500 px-5 mx-5'><button className='h-[5vh] cursor-pointer'>Games</button></a>
-          <a href="/Contact"><button className='h-[5vh] cursor-pointer'>Contact</button></a>
+          <Link to="/" className='border-r border-neutral-500 px-5 flex items-center'>Home</Link>
+          <Link to="/Games" className='border-neutral-500 px-5 flex items-center'>Games</Link>
+          <Link to="/Contact" className=' border-l border-neutral-500 px-5 flex items-center'>Contact</Link>
         </nav>
       </header>
       <Suspense fallback={<div>Loading...</div>}>
@@ -24,6 +24,6 @@ createRoot(document.getElementById('root')).render(
           <Route path="/Contact/" element={<Contact />} />
         </Routes>
       </Suspense>
-    </ BrowserRouter>
+    </ HashRouter>
   </StrictMode>
 )
